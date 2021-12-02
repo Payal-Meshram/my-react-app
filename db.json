@@ -1,0 +1,59 @@
+{
+  "students": [
+    {
+      "id": 3,
+      "stuname": "Payal M",
+      "email": "payal@example.com"
+    },
+    {
+      "stuname": "Sweety",
+      "email": "sweety@gmail.com",
+      "id": 4
+    },
+    {
+      "stuname": "payal",
+      "email": "p@g.com",
+      "id": 16
+    },
+    {
+      "stuname": "payal",
+      "email": "payal@t.com",
+      "id": 17
+    },
+    {
+      "stuname": "payal",
+      "email": "p@t.com",
+      "id": 18
+    },
+    {
+      "stuname": "payalM",
+      "email": "payal@test.com",
+      "id": 19
+    },
+    {
+      "stuname": "payal",
+      "email": "p@g.com",
+      "id": 20
+    },
+    {
+      "stuname": "payalM",
+      "email": "m@g.com",
+      "id": 21
+    },
+    {
+      "stuname": "payal",
+      "email": "payalmeshram23@gmail.com",
+      "id": 22
+    },
+    {
+      "stuname": "payal",
+      "email": "payal@g.com",
+      "id": 23
+    },
+    {
+      "stuname": "payal",
+      "email": "payal@g.com",
+      "id": 24
+    }
+  ]
+}
