@@ -29,6 +29,9 @@ import AddStudentModal from "../Pages/AddStudentModal";
 
 import Notification from "../../Common/Notification";
 
+import Counter from '../Pages/counter';
+import { useSelector } from 'react-redux';
+
 const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 900,
@@ -93,6 +96,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const List = () => {
+  const counterVal = useSelector(state => state.Test.counter);
+
   const classes = useStyles();
   const [students, setStudents] = useState([]);
   const [notify, setNotify] = useState({
@@ -102,6 +107,13 @@ const List = () => {
   });
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  useEffect(
+    () => {
+      console.log('counterVal', counterVal);
+    },
+    [counterVal]
+  );
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -217,6 +229,8 @@ const List = () => {
           </TableContainer>
         </Paper>
       </Grid>
+      <Typography variant="h1" color="initial">{counterVal}</Typography>
+      <Counter />
       <Notification notify={notify} setNotify={setNotify} />
     </>
   );
