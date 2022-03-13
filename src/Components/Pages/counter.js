@@ -12,9 +12,8 @@ const Counter = () => {
     // redux states & constants
     const dispatch = useDispatch();
     // way to read the redux data  / store => reducer => state
-    const reduxCounterVal = useSelector(state => state.Test.counter);
     
-    const inc = () => {
+    const increaseCounter = () => {
         setCounter(prev => prev + 1);
         dispatch(increment(counter + 1));
     };
@@ -27,7 +26,7 @@ const Counter = () => {
     return (
         <>
             <Typography variant="h5" color="initial">My Counter</Typography>
-            <Button onClick={inc} variant="contained">Inc</Button>
+            <Button onClick={increaseCounter} variant="contained">Inc</Button>
             <Button onClick={dec} variant="contained">Dec</Button>
         </>
     );

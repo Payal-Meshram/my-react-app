@@ -31,6 +31,7 @@ import Notification from "../../Common/Notification";
 
 import Counter from '../Pages/counter';
 import { useSelector } from 'react-redux';
+import { fetchUsers } from '../../actions/users';
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -96,8 +97,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const List = () => {
-  const counterVal = useSelector(state => state.Test.counter);
-
+  const counterVal = useSelector(nextState => nextState.Test.counter);
+  const isAuthenticated = useSelector(state => state.Auth.isAuthenticated);
   const classes = useStyles();
   const [students, setStudents] = useState([]);
   const [notify, setNotify] = useState({
@@ -125,18 +126,14 @@ const List = () => {
   };
 
   useEffect(() => {
-    async function getAllStudent() {
-      try {
-        const students = await axios.get("http://localhost:3000/students");
-        // console.log(students.data);
-        setStudents(students.data);
-      } catch (error) {
-        console.log("Something is wrong");
-      }
+    if (isAuthenticated) {
+      getUserList();
     }
-    getAllStudent();
-  }, []);
+  }, [isAuthenticated]);
 
+  const getUserList = async () => {
+    const resp = await fetchUsers();
+  }
   const handleDelete = async (id) => {
     await axios.delete(`http://localhost:3000/students/${id}`);
     let newStudent = students.filter((item) => {

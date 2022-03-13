@@ -7,6 +7,7 @@ import Edit from "./Student/Edit";
 import List from "./Student/List";
 import SignUp from './signup';
 import SignIn from './Pages/login';
+import App from '../App';
 
 const MainRoute = () => {
   return (

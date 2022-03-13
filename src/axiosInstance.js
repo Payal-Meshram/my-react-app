@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const SERVER_URL = 'https://reactjs-node-app-test.herokuapp.com/v1';
+const SERVER_URL = 'http://localhost:3001/v1';
+//  'https://reactjs-node-app-test.herokuapp.com/v1';
 const AxiosInstance = axios.create({
     baseURL: SERVER_URL,
     timeout: 180 * 1000, // 180 second server timeout

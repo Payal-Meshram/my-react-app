@@ -9,7 +9,7 @@ const initial = {
 };
 
 const Test = (state = initial, actions) => {
-
+    console.log('actions', actions);
     switch (actions.type) {
         case UPDATE_NAME:
             return {
